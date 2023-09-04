@@ -1940,14 +1940,26 @@ background: -o-linear-gradient(left, #24a12e, #813d94); */
 }
 
 @media (max-width: 767px) {
+    .outer-nav{
+        left: 50%;
+    }
     .outer-nav>li {
-        font-size: 44px
+        font-size: 34px
+    }
+    .outer-nav>li::before {
+        height: 8px;
     }
 }
 
 @media (max-width: 600px) {
+    .outer-nav{
+        left: 50%;
+    }
     .outer-nav>li {
-        font-size: 34px
+        font-size: 24px
+    }
+    .outer-nav>li::before {
+        height: 5px;
     }
 }
 
