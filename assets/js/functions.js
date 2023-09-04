@@ -275,6 +275,7 @@ $( document ).ready(function() {
       setTimeout(function(){
 
       if ($this.hasClass('slider--next-holograma')) {
+        window.alert("A");
         if (curLeftPos < totalWorks - 1 && curCenterPos < totalWorks - 1 && curRightPos < totalWorks - 1) {
           $left.removeClass('slider--item-holograma-left').next().addClass('slider--item-holograma-left');
           $center.removeClass('slider--item-holograma-center').next().addClass('slider--item-holograma-center');
