@@ -253,6 +253,83 @@ $( document ).ready(function() {
 
   }
 
+  function hologramaSlider() {
+  
+    $('.slider--prev-holograma, .slider--next-holograma').click(function() {
+
+      var $this = $(this),
+          curLeft = $('.slider-holograma').find('.slider--item-holograma-left'),
+          curLeftPos = $('.slider-holograma').children().index(curLeft),
+          curCenter = $('.slider-holograma').find('.slider--item-holograma-center'),
+          curCenterPos = $('.slider-holograma').children().index(curCenter),
+          curRight = $('.slider-holograma').find('.slider--item-holograma-right'),
+          curRightPos = $('.slider-holograma').children().index(curRight),
+          totalWorks = $('.slider-holograma').children().length,
+          $left = $('.slider--item-holograma-left'),
+          $center = $('.slider--item-holograma-center'),
+          $right = $('.slider--item-holograma-right'),
+          $item = $('.slider--item-holograma');
+
+      $('.slider-holograma').animate({ opacity : 0 }, 400);
+
+      setTimeout(function(){
+
+      if ($this.hasClass('slider--next-holograma')) {
+        if (curLeftPos < totalWorks - 1 && curCenterPos < totalWorks - 1 && curRightPos < totalWorks - 1) {
+          $left.removeClass('slider--item-holograma-left').next().addClass('slider--item-holograma-left');
+          $center.removeClass('slider--item-holograma-center').next().addClass('slider--item-holograma-center');
+          $right.removeClass('slider--item-holograma-right').next().addClass('slider--item-holograma-right');
+        }
+        else {
+          if (curLeftPos === totalWorks - 1) {
+            $item.removeClass('slider--item-holograma-left').first().addClass('slider--item-holograma-left');
+            $center.removeClass('slider--item-holograma-center').next().addClass('slider--item-holograma-center');
+            $right.removeClass('slider--item-holograma-right').next().addClass('slider--item-holograma-right');
+          }
+          else if (curCenterPos === totalWorks - 1) {
+            $left.removeClass('slider--item-holograma-left').next().addClass('slider--item-holograma-left');
+            $item.removeClass('slider--item-holograma-center').first().addClass('slider--item-holograma-center');
+            $right.removeClass('slider--item-holograma-right').next().addClass('slider--item-holograma-right');
+          }
+          else {
+            $left.removeClass('slider--item-holograma-left').next().addClass('slider--item-holograma-left');
+            $center.removeClass('slider--item-holograma-center').next().addClass('slider--item-holograma-center');
+            $item.removeClass('slider--item-holograma-right').first().addClass('slider--item-holograma-right');
+          }
+        }
+      }
+      else {
+        if (curLeftPos !== 0 && curCenterPos !== 0 && curRightPos !== 0) {
+          $left.removeClass('slider--item-holograma-left').prev().addClass('slider--item-holograma-left');
+          $center.removeClass('slider--item-holograma-center').prev().addClass('slider--item-holograma-center');
+          $right.removeClass('slider--item-holograma-right').prev().addClass('slider--item-holograma-right');
+        }
+        else {
+          if (curLeftPos === 0) {
+            $item.removeClass('slider--item-holograma-left').last().addClass('slider--item-holograma-left');
+            $center.removeClass('slider--item-holograma-center').prev().addClass('slider--item-holograma-center');
+            $right.removeClass('slider--item-holograma-right').prev().addClass('slider--item-holograma-right');
+          }
+          else if (curCenterPos === 0) {
+            $left.removeClass('slider--item-holograma-left').prev().addClass('slider--item-holograma-left');
+            $item.removeClass('slider--item-holograma-center').last().addClass('slider--item-holograma-center');
+            $right.removeClass('slider--item-holograma-right').prev().addClass('slider--item-holograma-right');
+          }
+          else {
+            $left.removeClass('slider--item-holograma-left').prev().addClass('slider--item-holograma-left');
+            $center.removeClass('slider--item-holograma-center').prev().addClass('slider--item-holograma-center');
+            $item.removeClass('slider--item-holograma-right').last().addClass('slider--item-holograma-right');
+          }
+        }
+      }
+
+    }, 400);
+
+    $('.slider-holograma').animate({ opacity : 1 }, 400);
+
+    });
+  }
+
   function transitionLabels() {
 
     $('.work-request--information input').focusout(function(){
@@ -275,6 +352,7 @@ $( document ).ready(function() {
 
   outerNav();
   workSlider();
+  hologramaSlider();
   transitionLabels();
 
 });
