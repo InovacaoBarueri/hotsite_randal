@@ -178,7 +178,7 @@ $( document ).ready(function() {
   function workSlider() {
 
     $('.slider--prev, .slider--next').click(function() {
-
+      
       var $this = $(this),
           curLeft = $('.slider').find('.slider--item-left'),
           curLeftPos = $('.slider').children().index(curLeft),
@@ -272,10 +272,9 @@ $( document ).ready(function() {
 
       $('.slider-holograma').animate({ opacity : 0 }, 400);
 
-      setTimeout(function(){
+      setTimeout_1(function(){
 
       if ($this.hasClass('slider--next-holograma')) {
-        window.alert("A");
         if (curLeftPos < totalWorks - 1 && curCenterPos < totalWorks - 1 && curRightPos < totalWorks - 1) {
           $left.removeClass('slider--item-holograma-left').next().addClass('slider--item-holograma-left');
           $center.removeClass('slider--item-holograma-center').next().addClass('slider--item-holograma-center');
