@@ -1135,7 +1135,8 @@ body {
     width: 80%;
     margin: 0 auto;
     padding: 0;
-    list-style: none
+    list-style: none;
+    text-align: center;
 }
 
 .holograma--lockup .slider--item-holograma {
@@ -1162,6 +1163,11 @@ body {
     margin: 0 auto
 }
 
+.holograma--lockup .slider--item-holograma-description a:hover {
+    color: #c0c0c0;
+    transition: 0.3s;
+}
+
 .holograma--lockup .slider--item-holograma-image {
     width: 200px;
     margin: 0 auto;
@@ -1171,6 +1177,8 @@ body {
 .holograma--lockup .slider--item-holograma-left .slider--item-holograma-image video,
 .holograma--lockup .slider--item-holograma-right .slider--item-holograma-image video  {
     width: 150px;
+    border-radius: 4px;
+
 }
 
 .holograma--lockup .slider--item-holograma-left .slider--item-holograma-image video::-webkit-media-controls,
@@ -1229,6 +1237,7 @@ body {
 
 .holograma--lockup .slider--item-holograma-center .slider--item-holograma-image video {
     width: 400px;
+    border-radius: 8px;
 }
 
 #modal-dl{
@@ -1360,7 +1369,7 @@ body {
 .holograma--lockup .slider--next-holograma,
 .holograma--lockup .slider--prev-holograma {
     position: absolute;
-    top: 160px;
+    top: 140px;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1394,20 +1403,39 @@ body {
     left: 0
 }
 
-@media (max-width: 900px) {
-    .holograma--lockup .slider--item-holograma-image video {
-        width: 120px;
+@media (max-width: 1300px) {
+    .holograma--lockup .slider--item-holograma-left video,
+    .holograma--lockup .slider--item-holograma-right video {
+        width: 110px;
     }
+
 
     .holograma--lockup .slider--item-holograma-center .slider--item-holograma-image video {
-        width: 240px;
+        width: 350px;
+    }
+}
+
+@media (max-width: 1260px) {
+    .holograma--lockup .slider--item-holograma-left video,
+    .holograma--lockup .slider--item-holograma-right video {
+        width: 100px; 
+  
     }
 
-    .holograma--lockup .slider--item-holograma-left .slider--item-holograma-image video,
-    .holograma--lockup .slider--item-holograma-right .slider--item-holograma-image video {
-        width: 120px;
-    }
 
+    .holograma--lockup .slider--item-holograma-center .slider--item-holograma-image video {
+        width: 320px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .holograma--lockup .slider--item-holograma-left,
+    .holograma--lockup .slider--item-holograma-right {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
     .holograma--lockup .slider--next-holograma,
     .holograma--lockup .slider--prev-holograma {
         top: 130px
@@ -1419,15 +1447,6 @@ body {
         width: 75%
     }
 
-    .holograma--lockup .slider--item-holograma-image video {
-        width: 90px;
-    }
-
-    .holograma--lockup .slider--item-holograma-left,
-    .holograma--lockup .slider--item-holograma-right {
-        display: none
-    }
-
     .holograma--lockup .slider--next-holograma,
     .holograma--lockup .slider--prev-holograma {
         top: 105px
@@ -1437,6 +1456,23 @@ body {
 @media (max-width: 600px) {
     .holograma--lockup .slider-holograma {
         width: auto
+    }
+}
+
+@media (max-width: 540px) {
+    .holograma--lockup .slider--item-holograma-center .slider--item-holograma-image video {
+        width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .holograma--lockup .slider--item-holograma-center .slider--item-holograma-image video {
+        width: 260px;
+    }
+
+    .holograma--lockup .slider--next-holograma,
+    .holograma--lockup .slider--prev-holograma {
+        top: 186px
     }
 }
 
@@ -2213,6 +2249,30 @@ background: -o-linear-gradient(left, #24a12e, #813d94); */
     transition-delay: .16s
 }
 
+.holograma-videos {
+    display: flex;
+    justify-content: center;
+    margin: 20px 20px 0px 20px;
+    padding: 20px 10px 0px 10px;
+    gap: 32px;
+}
+
+.links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.links a:hover {
+    color: #a0a0a0;
+    transition: 0.3s;
+}
+
 .video-avatar-teste video{
-    width: 300px;
+    width: 260px;
+}
+
+@media (max-width: 480px) {
+    .video-avatar-teste video {
+        width: 200px;
+    }
 }
