@@ -1159,7 +1159,8 @@ body {
 
 .holograma--lockup .slider--item-holograma-description {
     display: none;
-    max-width: 250px;
+    max-width: 360px;
+    font-size: 14px;
     margin: 0 auto
 }
 
@@ -1215,6 +1216,11 @@ body {
     display: block
 }
 
+.holograma--lockup .slider--item-holograma-left .slider--item-holograma-title,
+.holograma--lockup .slider--item-holograma-right .slider--item-holograma-title {
+    max-width: 160px;
+}
+
 .holograma--lockup .slider--item-holograma-center a {
     color: #fff;
     transition: color .2s;
@@ -1238,6 +1244,12 @@ body {
 .holograma--lockup .slider--item-holograma-center .slider--item-holograma-image video {
     width: 400px;
     border-radius: 8px;
+}
+
+.text-holograma {
+    text-align: center;
+    margin: 0px 40px;
+    font-size: 12px;
 }
 
 #modal-dl{
@@ -1403,6 +1415,14 @@ body {
     left: 0
 }
 
+.holograma--lockup .slider--item-holograma-center,
+.holograma--lockup .slider--item-holograma-left,
+.holograma--lockup .slider--item-holograma-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 @media (max-width: 1300px) {
     .holograma--lockup .slider--item-holograma-left video,
     .holograma--lockup .slider--item-holograma-right video {
@@ -1451,17 +1471,41 @@ body {
     .holograma--lockup .slider--prev-holograma {
         top: 105px
     }
+
+    .text-holograma {
+        margin: 0px;
+    }
 }
 
 @media (max-width: 600px) {
     .holograma--lockup .slider-holograma {
         width: auto
     }
+    .text-holograma {
+        font-size: 10px
+    }
+
+    .holograma--lockup .slider--item-holograma-center {
+        font-size: 10px;
+    }
+
+    .holograma--lockup .slider--item-holograma-center .slider--item-holograma-description a {
+        font-size: 12px;
+    }
+    
+    .holograma--lockup .slider--item-holograma-center .slider--item-holograma-title {
+        max-width: 280px;
+    }
+
 }
 
 @media (max-width: 540px) {
     .holograma--lockup .slider--item-holograma-center .slider--item-holograma-image video {
         width: 300px;
+    }
+
+    .holograma--lockup .slider--item-holograma-center .slider--item-holograma-title {
+        max-width: 280px;
     }
 }
 
@@ -1470,9 +1514,24 @@ body {
         width: 260px;
     }
 
+    .holograma--lockup .slider--item-holograma-center .slider--item-holograma-title {
+        max-width: 220px;
+    }
+
     .holograma--lockup .slider--next-holograma,
     .holograma--lockup .slider--prev-holograma {
         top: 186px
+    }
+}
+
+@media (max-width: 420px) {
+    .holograma h2 {
+        margin: 0px 0px 8px 0px;
+        font-size: 26px;
+    }
+
+    .holograma--lockup .slider--item-holograma-center .slider--item-holograma-title {
+        font-size: 14px;
     }
 }
 
