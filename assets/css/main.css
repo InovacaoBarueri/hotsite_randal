@@ -1489,8 +1489,13 @@ body {
         font-size: 10px;
     }
 
+    .holograma--lockup .slider--item-holograma-center .slider--item-holograma-description {
+        max-width: 280px;
+        font-size: 10px;
+    }
+
     .holograma--lockup .slider--item-holograma-center .slider--item-holograma-description a {
-        font-size: 12px;
+        font-size: 12px!important;
     }
     
     .holograma--lockup .slider--item-holograma-center .slider--item-holograma-title {
@@ -1531,6 +1536,7 @@ body {
     }
 
     .holograma--lockup .slider--item-holograma-center .slider--item-holograma-title {
+        max-width: 180px;
         font-size: 14px;
     }
 }
@@ -2335,3 +2341,4 @@ background: -o-linear-gradient(left, #24a12e, #813d94); */
         width: 200px;
     }
 }
+
